@@ -1,28 +1,25 @@
 * {
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-  background: #f4f6f8;
+  font-family: Arial, sans-serif;
+  background: #f7f7f7;
   display: flex;
   justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  margin: 0;
+  padding-top: 40px;
 }
 
 .container {
+  width: 350px;
   background: #fff;
   padding: 20px;
-  width: 350px;
-  border-radius: 10px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 h2 {
   text-align: center;
-  margin-bottom: 10px;
 }
 
 .balance {
@@ -30,78 +27,66 @@ h2 {
   margin: 20px 0;
 }
 
-.balance h1 {
-  margin: 5px 0;
-}
-
 .inc-exp-container {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
+  background: #f4f4f4;
+  padding: 10px;
+  margin: 20px 0;
+  border-radius: 5px;
 }
 
-.inc-exp-container p {
-  margin: 0;
+.money {
   font-size: 18px;
+  margin: 5px 0;
 }
 
-.money.plus {
+.plus {
   color: green;
 }
 
-.money.minus {
+.minus {
   color: red;
 }
 
 .list {
   list-style: none;
   padding: 0;
-  margin-bottom: 20px;
 }
 
 .list li {
-  background: #f4f6f8;
+  background: #fff;
   display: flex;
   justify-content: space-between;
-  padding: 8px 10px;
-  margin-bottom: 8px;
-  border-radius: 5px;
-  position: relative;
+  padding: 10px;
+  margin: 10px 0;
+  border-right: 5px solid;
 }
 
 .list li.plus {
-  border-right: 5px solid green;
+  border-color: green;
 }
 
 .list li.minus {
-  border-right: 5px solid red;
-}
-
-.list button {
-  background: red;
-  color: #fff;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-  padding: 2px 6px;
+  border-color: red;
 }
 
 form input {
   width: 100%;
-  padding: 8px;
-  margin-bottom: 10px;
+  padding: 10px;
+  margin: 10px 0;
 }
 
-form button {
+button {
   width: 100%;
   padding: 10px;
-  background: #4f46e5;
+  background: #2c7da0;
   color: white;
   border: none;
-  border-radius: 5px;
   cursor: pointer;
+  border-radius: 5px;
 }
 
-form button:hover {
-  background: #4338ca;
+button:hover {
+  background: #225f7a;
 }
