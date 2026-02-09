@@ -8,35 +8,37 @@ const amount = document.getElementById("amount");
 
 let transactions = [];
 
-form.addEventListener("submit", addTransaction);
-
 function addTransaction(e) {
   e.preventDefault();
 
-  if (text.value === "" || amount.value === "") return;
+  if (text.value === "" || amount.value === "") {
+    alert("Please enter description and amount");
+    return;
+  }
 
   const transaction = {
+    id: Math.floor(Math.random() * 100000),
     text: text.value,
     amount: +amount.value
   };
 
   transactions.push(transaction);
-  addToDOM(transaction);
+  addTransactionDOM(transaction);
   updateValues();
 
   text.value = "";
   amount.value = "";
 }
 
-function addToDOM(t) {
-  const sign = t.amount < 0 ? "-" : "+";
+function addTransactionDOM(transaction) {
+  const sign = transaction.amount < 0 ? "-" : "+";
   const item = document.createElement("li");
 
-  item.classList.add(t.amount < 0 ? "minus" : "plus");
+  item.classList.add(transaction.amount < 0 ? "minus" : "plus");
 
   item.innerHTML = `
-    ${t.text}
-    <span>${sign}$${Math.abs(t.amount)}</span>
+    ${transaction.text}
+    <span>${sign}$${Math.abs(transaction.amount)}</span>
   `;
 
   list.appendChild(item);
@@ -55,3 +57,5 @@ function updateValues() {
   moneyPlus.innerText = `+$${income}`;
   moneyMinus.innerText = `-$${expense}`;
 }
+
+form.addEventListener("submit", addTransaction);
